@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+:root {
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #f5f7fa;
+  background:
+    linear-gradient(132deg, #09090f 0%, #08070b 48%, #21060a 100%),
+    radial-gradient(circle at 18% 24%, rgba(210, 32, 32, 0.45), rgba(15, 8, 10, 0) 58%),
+    radial-gradient(circle at 84% 68%, rgba(165, 20, 35, 0.42), rgba(5, 5, 8, 0) 62%),
+    #040306;
+  position: relative;
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../img/sz_background.png") center/118% auto no-repeat;
+  opacity: 0.55;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: -2;
+}
+
+.padrao-fundo {
+  position: fixed;
+  inset: -8% -12%;
+  background: radial-gradient(circle at 12% 14%, rgba(255, 255, 255, 0.04), transparent 52%),
+    radial-gradient(circle at 88% 24%, rgba(255, 255, 255, 0.03), transparent 55%);
+  opacity: 0.75;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.barra-topo {
+  position: absolute;
+  top: clamp(20px, 5vw, 48px);
+  left: clamp(16px, 6vw, 64px);
+  right: clamp(16px, 6vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo-marca {
+  width: clamp(92px, 12vw, 132px);
+  height: auto;
+  display: block;
+}
+
+.avatar-perfil {
+  width: clamp(24px, 3vw, 34px);
+  height: clamp(24px, 3vw, 34px);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+}
+
+.conteudo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(60px, 12vh, 140px) clamp(16px, 4vw, 120px);
+}
+
+.moldura-video {
+  position: relative;
+  width: min(calc(100vw - 120px), 1080px);
+  aspect-ratio: 16 / 9;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 30px 120px rgba(0, 0, 0, 0.68), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  overflow: hidden;
+}
+
+.video-destaque {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sobreposicao-video {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 6vw, 80px);
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.85) 72%);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.titulo-sobreposicao {
+  font-family: "Bebas Neue", "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: clamp(1.35rem, 4vw, 2.9rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: #f7f7f9;
+  text-shadow: 0 0 36px rgba(255, 255, 255, 0.55);
+}
+
+.moldura-video:hover .sobreposicao-video,
+.moldura-video:focus-within .sobreposicao-video {
+  opacity: 1;
+  visibility: visible;
+}
+
+.navegacao-inferior {
+  position: absolute;
+  bottom: clamp(24px, 6vh, 72px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.pontos-progresso {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.ponto {
+  display: block;
+  width: 12px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+}
+
+.ponto.ativo {
+  width: 32px;
+  background: #ffffff;
+  opacity: 1;
+}
+
+.rotulo-menu {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+@media (max-width: 768px) {
+  .moldura-video {
+    width: calc(100vw - 64px);
+  }
+
+  .navegacao-inferior {
+    letter-spacing: 0.18em;
+  }
+}
+
+@media (max-width: 520px) {
+  .barra-topo {
+    top: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .conteudo {
+    padding: 120px 20px 160px;
+  }
+
+  .navegacao-inferior {
+    bottom: 32px;
+  }
+
+  .pontos-progresso {
+    gap: 12px;
+  }
+}
