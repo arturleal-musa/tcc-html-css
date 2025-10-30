@@ -13,9 +13,6 @@
 body {
   margin: 0;
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
   color: #f5f7fa;
   background:
@@ -24,7 +21,42 @@ body {
     radial-gradient(circle at 84% 68%, rgba(165, 20, 35, 0.42), rgba(5, 5, 8, 0) 62%),
     #040306;
   position: relative;
+  overflow-x: hidden;
+}
+
+.on-secondary {
+  background: #050505;
+}
+
+.scroll-stage {
+  --scroll-offset: 0;
+  --scroll-screen-count: 1;
+  min-height: 100vh;
   overflow: hidden;
+}
+
+.scroll-wrapper {
+  position: relative;
+  display: flex;
+  width: calc(100vw * var(--scroll-screen-count));
+  height: 100vh;
+  transform: translateX(var(--scroll-offset));
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scroll-wrapper.is-animating {
+  pointer-events: none;
+}
+
+.screen {
+  position: relative;
+  flex: 0 0 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 body::after {
@@ -38,6 +70,10 @@ body::after {
   z-index: -2;
 }
 
+.on-secondary::after {
+  opacity: 0;
+}
+
 .padrao-fundo {
   position: fixed;
   inset: -8% -12%;
@@ -46,6 +82,11 @@ body::after {
   opacity: 0.75;
   pointer-events: none;
   z-index: -1;
+  transition: opacity 0.45s ease;
+}
+
+.on-secondary .padrao-fundo {
+  opacity: 0;
 }
 
 .barra-topo {
@@ -85,7 +126,6 @@ body::after {
   position: relative;
   width: min(calc(100vw - 120px), 1080px);
   aspect-ratio: 16 / 9;
-  border: 1px solid rgba(255, 255, 255, 0.28);
   background: #050505;
   display: flex;
   align-items: center;
@@ -153,19 +193,30 @@ body::after {
 }
 
 .ponto {
-  display: block;
+  display: inline-block;
   width: 12px;
   height: 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.3);
   transition: width 0.3s ease, opacity 0.3s ease;
   opacity: 0.6;
+  text-decoration: none;
+}
+
+.ponto:not(.ativo) {
+  cursor: pointer;
 }
 
 .ponto.ativo {
   width: 32px;
   background: #ffffff;
   opacity: 1;
+  pointer-events: none;
+}
+
+.ponto--placeholder {
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 .rotulo-menu {
@@ -196,9 +247,5 @@ body::after {
 
   .navegacao-inferior {
     bottom: 32px;
-  }
-
-  .pontos-progresso {
-    gap: 12px;
   }
 }

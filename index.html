@@ -5,41 +5,207 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Speed Zone</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/segundaTela.css" />
   </head>
-  <body>
-    <div class="padrao-fundo" aria-hidden="true"></div>
+  <body class="scroll-stage">
+    <div class="scroll-wrapper" data-scroll-wrapper>
+      <section class="screen screen--primary" data-screen="0">
+        <div class="padrao-fundo" aria-hidden="true"></div>
 
-    <header class="barra-topo">
-      <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
-      <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
-    </header>
+        <header class="barra-topo">
+          <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
+          <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+        </header>
 
-    <main class="conteudo">
-      <div class="moldura-video">
-        <video
-          class="video-destaque"
-          src="img/bugattiChiron.mp4"
-          autoplay
-          loop
-          muted
-          playsinline
-        >
-          Seu navegador não suporta a reprodução do vídeo.
-        </video>
-        <div class="sobreposicao-video">
-          <span class="titulo-sobreposicao">O INÍCIO DE UM SONHO</span>
+        <main class="conteudo">
+          <div class="moldura-video">
+            <video
+              class="video-destaque"
+              src="img/bugattiChiron.mp4"
+              autoplay
+              loop
+              muted
+              playsinline
+            >
+              Seu navegador não suporta a reprodução do vídeo.
+            </video>
+            <div class="sobreposicao-video">
+              <span class="titulo-sobreposicao">O INÍCIO DE UM SONHO</span>
+            </div>
+          </div>
+        </main>
+
+        <footer class="navegacao-inferior">
+          <div class="pontos-progresso" role="navigation" aria-label="Progresso do carrossel">
+            <a
+              class="ponto ativo"
+              data-scroll-to="0"
+              href="#"
+              aria-current="page"
+              aria-label="Tela atual"
+            ></a>
+            <a class="ponto" data-scroll-to="1" href="#" aria-label="Ir para a segunda tela"></a>
+            <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+            <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+          </div>
+          <span class="rotulo-menu">MENU</span>
+        </footer>
+      </section>
+
+      <section class="screen screen--secondary segunda-tela" data-screen="1">
+        <div class="tela-revelacao">
+          <video
+            class="tela-revelacao__video"
+            src="img/mcLaren720S.mp4"
+            autoplay
+            loop
+            muted
+            playsinline
+          >
+            Seu navegador não suporta a reprodução do vídeo.
+          </video>
+
+          <div class="grade-revelacao">
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+            <span class="bloco" aria-hidden="true"></span>
+          </div>
+
+          <header class="barra-topo segunda-tela__topo">
+            <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
+            <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+          </header>
+
+          <div class="conteudo-central">
+            <h1 class="titulo-principal">Entenda o que você</h1>
+            <p class="texto-suporte">PROCURA</p>
+          </div>
+
+          <footer class="navegacao-inferior segunda-tela__navegacao">
+            <div class="pontos-progresso" role="navigation" aria-label="Progresso do carrossel">
+              <a class="ponto" data-scroll-to="0" href="#" aria-label="Voltar para a primeira tela"></a>
+              <a
+                class="ponto ativo"
+                data-scroll-to="1"
+                href="#"
+                aria-current="page"
+                aria-label="Tela atual"
+              ></a>
+              <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+              <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+            </div>
+            <span class="rotulo-menu">MENU</span>
+          </footer>
         </div>
-      </div>
-    </main>
+      </section>
+    </div>
 
-    <footer class="navegacao-inferior">
-      <div class="pontos-progresso" aria-label="Progresso do carrossel">
-        <span class="ponto ativo"></span>
-        <span class="ponto"></span>
-        <span class="ponto"></span>
-        <span class="ponto"></span>
-      </div>
-      <span class="rotulo-menu">MENU</span>
-    </footer>
+    <script src="js/scrollNav.js" defer></script>
   </body>
 </html>
