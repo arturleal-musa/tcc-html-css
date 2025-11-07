@@ -184,6 +184,8 @@ body::after {
   font-size: 0.7rem;
   text-transform: uppercase;
   z-index: 1;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .pontos-progresso {
@@ -194,7 +196,7 @@ body::after {
 
 .ponto {
   display: inline-block;
-  width: 12px;
+  width: 22px;
   height: 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.3);
@@ -208,14 +210,8 @@ body::after {
 }
 
 .ponto.ativo {
-  width: 32px;
   background: #ffffff;
   opacity: 1;
-  pointer-events: none;
-}
-
-.ponto--placeholder {
-  opacity: 0.35;
   pointer-events: none;
 }
 
@@ -249,3 +245,5 @@ body::after {
     bottom: 32px;
   }
 }
+
+/* --- Terceira tela --- */

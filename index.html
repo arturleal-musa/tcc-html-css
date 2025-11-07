@@ -6,6 +6,7 @@
     <title>Speed Zone</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/segundaTela.css" />
+    <link rel="stylesheet" href="css/terceiraTela.css" />
   </head>
   <body class="scroll-stage">
     <div class="scroll-wrapper" data-scroll-wrapper>
@@ -45,8 +46,7 @@
               aria-label="Tela atual"
             ></a>
             <a class="ponto" data-scroll-to="1" href="#" aria-label="Ir para a segunda tela"></a>
-            <span class="ponto ponto--placeholder" aria-hidden="true"></span>
-            <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+            <a class="ponto" data-scroll-to="2" href="#" aria-label="Ir para a terceira tela"></a>
           </div>
           <span class="rotulo-menu">MENU</span>
         </footer>
@@ -197,12 +197,49 @@
                 aria-current="page"
                 aria-label="Tela atual"
               ></a>
-              <span class="ponto ponto--placeholder" aria-hidden="true"></span>
-              <span class="ponto ponto--placeholder" aria-hidden="true"></span>
+              <a class="ponto" data-scroll-to="2" href="#" aria-label="Ir para a terceira tela"></a>
             </div>
             <span class="rotulo-menu">MENU</span>
           </footer>
         </div>
+      </section>
+
+      <section class="screen terceira-tela" data-screen="2" aria-label="Terceira tela">
+        <header class="barra-topo">
+          <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
+          <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+        </header>
+
+        <div class="terceira-tela__titulo">
+          <span>FORD GT40</span>
+        </div>
+
+        <div class="terceira-tela__logo">
+          <img src="img/ford_logo.png" alt="Logomarca Ford" />
+        </div>
+
+        <div class="terceira-tela__carro">
+          <img src="img/blue_car.png" alt="Carro esportivo azul clássico" />
+        </div>
+
+        <div class="terceira-tela__cta" aria-live="polite">
+          <button class="terceira-tela__cta-botao" type="button">COMECE AGORA</button>
+        </div>
+
+        <footer class="navegacao-inferior">
+          <div class="pontos-progresso" role="navigation" aria-label="Progresso do carrossel">
+            <a class="ponto" data-scroll-to="0" href="#" aria-label="Voltar para a primeira tela"></a>
+            <a class="ponto" data-scroll-to="1" href="#" aria-label="Ir para a segunda tela"></a>
+            <a
+              class="ponto ativo"
+              data-scroll-to="2"
+              href="#"
+              aria-current="page"
+              aria-label="Tela atual"
+            ></a>
+          </div>
+          <span class="rotulo-menu">MENU</span>
+        </footer>
       </section>
     </div>
 

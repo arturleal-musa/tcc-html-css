@@ -17,6 +17,7 @@
 
   const updateStageState = () => {
     document.body.classList.toggle("on-secondary", currentIndex > 0);
+    document.body.dataset.stageIndex = String(currentIndex);
   };
 
   wrapper.style.setProperty("--scroll-screen-count", screens.length);

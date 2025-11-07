@@ -139,6 +139,8 @@
   text-transform: uppercase;
   z-index: 4;
   pointer-events: auto;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .segunda-tela .pontos-progresso {
@@ -149,7 +151,7 @@
 
 .segunda-tela .ponto {
   display: inline-block;
-  width: 12px;
+  width: 22px;
   height: 4px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.3);
@@ -163,14 +165,8 @@
 }
 
 .segunda-tela .ponto.ativo {
-  width: 32px;
   background: #ffffff;
   opacity: 1;
-  pointer-events: none;
-}
-
-.segunda-tela .ponto--placeholder {
-  opacity: 0.35;
   pointer-events: none;
 }
 

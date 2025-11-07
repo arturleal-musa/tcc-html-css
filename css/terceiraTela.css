@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+/* Estrutura minimalista da terceira tela */
+.terceira-tela {
+  position: relative;
+  color: #f5f7fa;
+  background: url("../img/blue_bg.png") center/cover no-repeat;
+}
+
+.terceira-tela .barra-topo,
+.terceira-tela .navegacao-inferior {
+  z-index: 2;
+}
+
+.terceira-tela__titulo {
+  position: absolute;
+  top: clamp(170px, 30vh, 260px);
+  left: 50%;
+  transform: translateX(-45%);
+  width: min(100vw, 1120px);
+  z-index: 2;
+}
+
+.terceira-tela__titulo span {
+  font-family: "Racing Sans One", "Bebas Neue", "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: clamp(4rem, 10vw, 6rem);
+  text-transform: uppercase;
+  color: #fefefe;
+}
+
+.terceira-tela__carro {
+  position: absolute;
+  bottom: clamp(120px, 15vh, 185px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(100vw, 1120px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.terceira-tela__carro img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.7));
+}
+
+.terceira-tela__logo {
+  position: absolute;
+  top: clamp(140px, 20vh, 220px);
+  right: clamp(160px, 22vw, 300px);
+  width: clamp(160px, 20vw, 300px);
+  z-index: 2;
+}
+
+.terceira-tela__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+}
+
+.terceira-tela__cta {
+  position: absolute;
+  bottom: clamp(110px, 14vh, 160px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.terceira-tela__cta-botao {
+  font-family: "Oswald", "Bebas Neue", "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: clamp(0.82rem, 2.5vw, 1.15rem);
+  font-weight: 500;
+  color: #f9fbff;
+  background-color: rgba(8, 20, 32, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  border-radius: 4px;
+  padding: clamp(10px, 1.3vw, 16px) clamp(46px, 8vw, 120px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.65);
+}
+
+.terceira-tela__cta-botao:hover,
+.terceira-tela__cta-botao:focus-visible {
+  background-color: rgba(11, 32, 48, 0.32);
+  border-color: rgba(255, 255, 255, 0.68);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.terceira-tela__cta-botao:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
