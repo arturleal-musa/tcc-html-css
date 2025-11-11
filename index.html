@@ -210,20 +210,27 @@
           <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
         </header>
 
-        <div class="terceira-tela__titulo">
-          <span>FORD GT40</span>
+        <div class="terceira-tela__titulo" aria-live="polite">
+          <span class="terceira-tela__titulo-text terceira-tela__titulo-text--primary">FORD GT40</span>
+          <span class="terceira-tela__titulo-text terceira-tela__titulo-text--alt">ZONDA HP</span>
         </div>
 
-        <div class="terceira-tela__logo">
-          <img src="img/ford_logo.png" alt="Logomarca Ford" />
+        <div class="terceira-tela__logo" aria-hidden="true">
+          <img class="terceira-tela__logo-img terceira-tela__logo-img--primary" src="img/ford_logo.png" alt="Ford" />
+          <img class="terceira-tela__logo-img terceira-tela__logo-img--alt" src="img/pagani_logo.png" alt="Pagani" />
         </div>
 
-        <div class="terceira-tela__carro">
-          <img src="img/blue_car.png" alt="Carro esportivo azul clássico" />
+        <div class="terceira-tela__pista" aria-live="polite">
+          <div class="terceira-tela__carro">
+            <img src="img/blue_car.png" alt="Carro esportivo azul clássico" />
+          </div>
+          <div class="terceira-tela__carro terceira-tela__carro--alt" aria-hidden="true">
+            <img src="img/darkblue_car.png" alt="" />
+          </div>
         </div>
 
         <div class="terceira-tela__cta" aria-live="polite">
-          <button class="terceira-tela__cta-botao" type="button">COMECE AGORA</button>
+          <button class="terceira-tela__cta-botao" type="button">COMEÇE AGORA</button>
         </div>
 
         <footer class="navegacao-inferior">

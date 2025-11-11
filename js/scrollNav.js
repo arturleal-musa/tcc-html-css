@@ -22,9 +22,19 @@
 
   wrapper.style.setProperty("--scroll-screen-count", screens.length);
   wrapper.style.setProperty("--scroll-offset", "0vw");
+  const lastScreenIndex = screens.length - 1;
   let currentIndex = 0;
   let isAnimating = false;
   let touchStartY = null;
+  let thirdCarouselAlt = false;
+
+  const setThirdCarouselState = (nextState) => {
+    if (thirdCarouselAlt === nextState) {
+      return;
+    }
+    thirdCarouselAlt = nextState;
+    document.body.classList.toggle("third-carousel-alt", thirdCarouselAlt);
+  };
 
   const setOffset = (index) => {
     wrapper.style.setProperty("--scroll-offset", `-${index * 100}vw`);
@@ -56,6 +66,7 @@
       return;
     }
     isAnimating = true;
+    setThirdCarouselState(false);
     currentIndex = nextIndex;
     updateStageState();
     wrapper.classList.add("is-animating");
@@ -64,9 +75,29 @@
     window.setTimeout(finishAnimation, SCROLL_DURATION);
   };
 
+  const tryHandleThirdCarousel = (direction) => {
+    if (currentIndex !== lastScreenIndex) {
+      return false;
+    }
+    if (direction === "forward" && !thirdCarouselAlt) {
+      setThirdCarouselState(true);
+      return true;
+    }
+    if (direction === "backward" && thirdCarouselAlt) {
+      setThirdCarouselState(false);
+      return true;
+    }
+    return false;
+  };
+
   const handleButtonClick = (event) => {
     const targetIndex = Number.parseInt(event.currentTarget.dataset.scrollTo, 10);
     if (Number.isNaN(targetIndex)) {
+      return;
+    }
+    if (targetIndex === currentIndex && targetIndex === lastScreenIndex && thirdCarouselAlt) {
+      event.preventDefault();
+      setThirdCarouselState(false);
       return;
     }
     event.preventDefault();
@@ -79,6 +110,14 @@
 
   const handleWheel = (event) => {
     if (isAnimating) {
+      return;
+    }
+    if (event.deltaY > WHEEL_THRESHOLD && tryHandleThirdCarousel("forward")) {
+      event.preventDefault();
+      return;
+    }
+    if (event.deltaY < -WHEEL_THRESHOLD && tryHandleThirdCarousel("backward")) {
+      event.preventDefault();
       return;
     }
     if (event.deltaY > WHEEL_THRESHOLD && currentIndex < screens.length - 1) {
@@ -94,10 +133,20 @@
     if (isAnimating) {
       return;
     }
-    if ((event.key === "ArrowRight" || event.key === "PageDown") && currentIndex < screens.length - 1) {
+    const isNextKey = event.key === "ArrowRight" || event.key === "PageDown";
+    const isPrevKey = event.key === "ArrowLeft" || event.key === "PageUp";
+    if (isNextKey && tryHandleThirdCarousel("forward")) {
+      event.preventDefault();
+      return;
+    }
+    if (isPrevKey && tryHandleThirdCarousel("backward")) {
+      event.preventDefault();
+      return;
+    }
+    if (isNextKey && currentIndex < screens.length - 1) {
       event.preventDefault();
       startAnimation(currentIndex + 1);
-    } else if ((event.key === "ArrowLeft" || event.key === "PageUp") && currentIndex > 0) {
+    } else if (isPrevKey && currentIndex > 0) {
       event.preventDefault();
       startAnimation(currentIndex - 1);
     }
@@ -119,6 +168,16 @@
     const currentY = event.touches[0].clientY;
     const delta = touchStartY - currentY;
 
+    if (delta > TOUCH_THRESHOLD && tryHandleThirdCarousel("forward")) {
+      event.preventDefault();
+      touchStartY = null;
+      return;
+    }
+    if (delta < -TOUCH_THRESHOLD && tryHandleThirdCarousel("backward")) {
+      event.preventDefault();
+      touchStartY = null;
+      return;
+    }
     if (delta > TOUCH_THRESHOLD && currentIndex < screens.length - 1) {
       event.preventDefault();
       startAnimation(currentIndex + 1);

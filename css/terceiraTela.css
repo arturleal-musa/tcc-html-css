@@ -20,22 +20,47 @@
   transform: translateX(-45%);
   width: min(100vw, 1120px);
   z-index: 2;
+  display: grid;
 }
 
-.terceira-tela__titulo span {
+.terceira-tela__titulo-text {
+  grid-area: 1 / 1;
+  display: inline-block;
   font-family: "Racing Sans One", "Bebas Neue", "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: clamp(4rem, 10vw, 6rem);
   text-transform: uppercase;
   color: #fefefe;
+  margin: 0;
+  transition:
+    opacity 0.65s ease,
+    transform 0.65s ease;
+}
+
+.terceira-tela__titulo-text--alt {
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.terceira-tela__pista {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  isolation: isolate;
 }
 
 .terceira-tela__carro {
   position: absolute;
-  bottom: clamp(120px, 15vh, 185px);
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  width: min(100vw, 1120px);
-  pointer-events: none;
+  width: min(1000px, 86vw);
+  transform: translate(-50%, -50%) scale(1);
+  transition:
+    left 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 0.85s cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 0.85s ease,
+    filter 0.85s ease;
+  will-change: transform, opacity, filter, left;
   z-index: 1;
 }
 
@@ -44,21 +69,41 @@
   height: auto;
   display: block;
   filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.7));
+  transition: filter 0.85s ease;
+}
+
+.terceira-tela__carro--alt {
+  width: min(700px, 60vw);
+  top: 53%;
+  left: 96%;
+  filter: blur(1.2px);
+  transform: translate(-50%, -50%) scale(0.7);
+  z-index: 0;
 }
 
 .terceira-tela__logo {
   position: absolute;
   top: clamp(140px, 20vh, 220px);
   right: clamp(160px, 22vw, 300px);
-  width: clamp(160px, 20vw, 300px);
+  width: clamp(180px, 26vw, 360px);
   z-index: 2;
+  display: grid;
 }
 
-.terceira-tela__logo img {
+.terceira-tela__logo-img {
+  grid-area: 1 / 1;
   width: 100%;
   height: auto;
   display: block;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.terceira-tela__logo-img--alt {
+  opacity: 0;
+  transform: translateY(-8px) scale(1.02);
 }
 
 .terceira-tela__cta {
@@ -104,4 +149,44 @@
 
 .terceira-tela__cta-botao:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__carro {
+  width: min(700px, 60vw);
+  left: 4%;
+  transform: translate(-50%, -50%) scale(0.7);
+  filter: blur(1.2px);
+  top: 53%;
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__carro--alt {
+  left: 50%;
+  width: min(1000px, 86vw);
+  opacity: 1;
+  filter: blur(0);
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1;
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela {
+  background: url("../img/darkblue_bg.png") center/cover no-repeat;
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__titulo-text--primary {
+  opacity: 0;
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__titulo-text--alt {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__logo-img--primary {
+  opacity: 0;
+  transform: translateY(8px) scale(0.9);
+}
+
+body.third-carousel-alt[data-stage-index="2"] .terceira-tela__logo-img--alt {
+  opacity: 1;
+  transform: translateY(10%) scale(1.3);
 }
