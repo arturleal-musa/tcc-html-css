@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/segundaTela.css" />
     <link rel="stylesheet" href="css/terceiraTela.css" />
   </head>
-  <body class="scroll-stage">
+  <body class="scroll-stage" data-carousel-stage="0">
     <div class="scroll-wrapper" data-scroll-wrapper>
       <section class="screen screen--primary" data-screen="0">
         <div class="padrao-fundo" aria-hidden="true"></div>
@@ -212,20 +212,25 @@
 
         <div class="terceira-tela__titulo" aria-live="polite">
           <span class="terceira-tela__titulo-text terceira-tela__titulo-text--primary">FORD GT40</span>
-          <span class="terceira-tela__titulo-text terceira-tela__titulo-text--alt">ZONDA HP</span>
+          <span class="terceira-tela__titulo-text terceira-tela__titulo-text--secondary">ZONDA HP</span>
+          <span class="terceira-tela__titulo-text terceira-tela__titulo-text--tertiary">CORVETTE Z06</span>
         </div>
 
         <div class="terceira-tela__logo" aria-hidden="true">
           <img class="terceira-tela__logo-img terceira-tela__logo-img--primary" src="img/ford_logo.png" alt="Ford" />
-          <img class="terceira-tela__logo-img terceira-tela__logo-img--alt" src="img/pagani_logo.png" alt="Pagani" />
+          <img class="terceira-tela__logo-img terceira-tela__logo-img--secondary" src="img/pagani_logo.png" alt="Pagani" />
+          <img class="terceira-tela__logo-img terceira-tela__logo-img--tertiary" src="img/chevrolet_logo.png" alt="Chevrolet" />
         </div>
 
         <div class="terceira-tela__pista" aria-live="polite">
-          <div class="terceira-tela__carro">
+          <div class="terceira-tela__carro terceira-tela__carro--ford">
             <img src="img/blue_car.png" alt="Carro esportivo azul clássico" />
           </div>
-          <div class="terceira-tela__carro terceira-tela__carro--alt" aria-hidden="true">
-            <img src="img/darkblue_car.png" alt="" />
+          <div class="terceira-tela__carro terceira-tela__carro--pagani">
+            <img src="img/darkblue_car.png" alt="Pagani Zonda HP supercar" />
+          </div>
+          <div class="terceira-tela__carro terceira-tela__carro--corvette">
+            <img src="img/orange_car.png" alt="Chevrolet Corvette Z06 supercar" />
           </div>
         </div>
 

@@ -8,6 +8,14 @@
   background: url("../img/blue_bg.png") center/cover no-repeat;
 }
 
+body[data-carousel-stage="1"] .terceira-tela {
+  background: url("../img/darkblue_bg.png") center/cover no-repeat;
+}
+
+body[data-carousel-stage="2"] .terceira-tela {
+  background: url("../img/orange_bg.png") center/cover no-repeat;
+}
+
 .terceira-tela .barra-topo,
 .terceira-tela .navegacao-inferior {
   z-index: 2;
@@ -31,14 +39,27 @@
   text-transform: uppercase;
   color: #fefefe;
   margin: 0;
+  opacity: 0;
+  transform: translateY(12px);
   transition:
     opacity 0.65s ease,
     transform 0.65s ease;
 }
 
-.terceira-tela__titulo-text--alt {
-  opacity: 0;
-  transform: translateY(12px);
+body[data-carousel-stage="0"] .terceira-tela__titulo-text--primary,
+body:not([data-carousel-stage]) .terceira-tela__titulo-text--primary {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-carousel-stage="1"] .terceira-tela__titulo-text--secondary {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body[data-carousel-stage="2"] .terceira-tela__titulo-text--tertiary {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .terceira-tela__pista {
@@ -61,7 +82,7 @@
     opacity 0.85s ease,
     filter 0.85s ease;
   will-change: transform, opacity, filter, left;
-  z-index: 1;
+  z-index: 0;
 }
 
 .terceira-tela__carro img {
@@ -72,13 +93,93 @@
   transition: filter 0.85s ease;
 }
 
-.terceira-tela__carro--alt {
-  width: min(700px, 60vw);
-  top: 53%;
+.terceira-tela__carro--ford {
+  width: min(1000px, 86vw);
+}
+
+.terceira-tela__carro--pagani {
+  width: min(960px, 82vw);
+}
+
+.terceira-tela__carro--corvette {
+  width: min(980px, 84vw);
+}
+
+body[data-carousel-stage="0"] .terceira-tela__carro--ford,
+body:not([data-carousel-stage]) .terceira-tela__carro--ford {
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 1;
+}
+
+body[data-carousel-stage="0"] .terceira-tela__carro--pagani,
+body:not([data-carousel-stage]) .terceira-tela__carro--pagani {
   left: 96%;
+  top: 53.5%;
+  width: min(700px, 60vw);
   filter: blur(1.2px);
-  transform: translate(-50%, -50%) scale(0.7);
   z-index: 0;
+}
+
+body[data-carousel-stage="0"] .terceira-tela__carro--corvette,
+body:not([data-carousel-stage]) .terceira-tela__carro--corvette {
+  left: 120%;
+  top: 55%;
+  transform: translate(-50%, -50%) scale(0.6);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+body[data-carousel-stage="1"] .terceira-tela__carro--ford {
+  left: 4%;
+  top: 52%;
+  transform: translate(-50%, -50%) scale(0.72);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+body[data-carousel-stage="1"] .terceira-tela__carro--pagani {
+  left: 50%;
+  top: 53.5%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 1;
+}
+
+body[data-carousel-stage="1"] .terceira-tela__carro--corvette {
+  left: 96%;
+  top: 55%;
+  transform: translate(-50%, -50%) scale(0.72);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+body[data-carousel-stage="2"] .terceira-tela__carro--ford {
+  left: -20%;
+  top: 52%;
+  transform: translate(-50%, -50%) scale(0.6);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+body[data-carousel-stage="2"] .terceira-tela__carro--pagani {
+  left: 4%;
+  top: 54.5%;
+  transform: translate(-50%, -50%) scale(0.72);
+  filter: blur(1.2px);
+  z-index: 0;
+}
+
+body[data-carousel-stage="2"] .terceira-tela__carro--corvette {
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  filter: blur(0);
+  z-index: 1;
 }
 
 .terceira-tela__logo {
@@ -96,14 +197,27 @@
   height: auto;
   display: block;
   filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.5));
+  opacity: 0;
+  transform: translateY(-10px) scale(0.9);
   transition:
     opacity 0.5s ease,
     transform 0.5s ease;
 }
 
-.terceira-tela__logo-img--alt {
-  opacity: 0;
-  transform: translateY(-8px) scale(1.02);
+body[data-carousel-stage="0"] .terceira-tela__logo-img--primary,
+body:not([data-carousel-stage]) .terceira-tela__logo-img--primary {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+body[data-carousel-stage="1"] .terceira-tela__logo-img--secondary {
+  opacity: 1;
+  transform: translateY(10%) scale(1.3);
+}
+
+body[data-carousel-stage="2"] .terceira-tela__logo-img--tertiary {
+  opacity: 1;
+  transform: translateY(-10%) scale(1);
 }
 
 .terceira-tela__cta {
@@ -149,44 +263,4 @@
 
 .terceira-tela__cta-botao:focus-visible {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__carro {
-  width: min(700px, 60vw);
-  left: 4%;
-  transform: translate(-50%, -50%) scale(0.7);
-  filter: blur(1.2px);
-  top: 53%;
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__carro--alt {
-  left: 50%;
-  width: min(1000px, 86vw);
-  opacity: 1;
-  filter: blur(0);
-  transform: translate(-50%, -50%) scale(1);
-  z-index: 1;
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela {
-  background: url("../img/darkblue_bg.png") center/cover no-repeat;
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__titulo-text--primary {
-  opacity: 0;
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__titulo-text--alt {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__logo-img--primary {
-  opacity: 0;
-  transform: translateY(8px) scale(0.9);
-}
-
-body.third-carousel-alt[data-stage-index="2"] .terceira-tela__logo-img--alt {
-  opacity: 1;
-  transform: translateY(10%) scale(1.3);
 }
