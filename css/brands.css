@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap");
+
+.scroll-stage {
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  display: flex;
+  width: calc(100vw * var(--scroll-screen-count, 3));
+  height: 100vh;
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.scroll-wrapper[data-scroll-wrapper] {
+  transform: translateX(var(--scroll-offset, 0));
+}
+
+.screen {
+  flex: 0 0 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+body.final-page,
+.brands-screen {
+  margin: 0;
+  min-height: 100vh;
+  background: url("../img/brands_bg.png") center/cover no-repeat, #010101;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #f5f7fa;
+  overflow: hidden;
+}
+
+.brands-screen {
+  display: flex;
+  flex-direction: column;
+}
+
+.final-page .barra-topo,
+.brands-screen .barra-topo {
+  position: absolute;
+  top: clamp(20px, 5vw, 48px);
+  left: clamp(16px, 6vw, 64px);
+  right: clamp(16px, 6vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.final-page .logo-marca,
+.brands-screen .logo-marca {
+  width: clamp(92px, 12vw, 132px);
+  height: auto;
+  display: block;
+}
+
+.final-page .avatar-perfil,
+.brands-screen .avatar-perfil {
+  width: clamp(24px, 3vw, 34px);
+  height: clamp(24px, 3vw, 34px);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+}
+
+.brands-content {
+  min-height: 100vh;
+  padding: clamp(100px, 10vh, 200px) clamp(24px, 7vw, 120px) clamp(140px, 18vh, 200px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 6vh, 64px);
+}
+
+.brands-hero {
+  text-align: center;
+  margin-top: clamp(24px, 5vh, 60px);
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.3em;
+}
+
+.brands-titulo {
+  margin: 0;
+  font-family: "Alfa Slab One";
+  font-size: 27px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.brands-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.brands-slider__track {
+  display: flex;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.brands-slide {
+  flex: 0 0 100%;
+  min-width: 100%;
+}
+
+.brands-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+}
+
+.brands-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(9px, 2vw, 15px);
+}
+
+.brands-card {
+  display: flex;
+  align-items: center;
+  gap: clamp(18px, 3vw, 32px);
+  padding: clamp(11px, 3vw, 20px);
+  min-height: clamp(40px, 12vw, 90px);
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Racing Sans One";
+  font-size: 30px;
+  text-decoration: none;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.brands-card img {
+  width: clamp(50px, 9vw, 80px);
+}
+
+.brands-card:hover,
+.brands-card:focus-visible {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.07);
+  transform: translateY(-4px);
+  outline: none;
+}
+
+.final-page .navegacao-inferior,
+.brands-screen .navegacao-inferior {
+  position: absolute;
+  bottom: clamp(32px, 6vh, 72px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: 0.25em;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.final-page .pontos-progresso,
+.brands-screen .pontos-progresso {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.final-page .ponto,
+.brands-screen .ponto {
+  display: inline-block;
+  width: 22px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.3s ease, opacity 0.3s ease;
+  opacity: 0.6;
+  text-decoration: none;
+}
+
+.final-page .ponto.ativo,
+.brands-screen .ponto.ativo {
+  background: #ffffff;
+  opacity: 1;
+  cursor: default;
+}
+
+.final-page .ponto:not(.ativo),
+.brands-screen .ponto:not(.ativo) {
+  cursor: pointer;
+}
+
+.final-page .rotulo-menu,
+.brands-screen .rotulo-menu {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.brands-slider__nav {
+  margin-top: clamp(28px, 4vh, 48px);
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}

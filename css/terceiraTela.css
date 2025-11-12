@@ -235,6 +235,7 @@ body[data-carousel-stage="2"] .terceira-tela__logo-img--tertiary {
   font-size: clamp(0.82rem, 2.5vw, 1.15rem);
   font-weight: 500;
   color: #f9fbff;
+  text-decoration: none;
   background-color: rgba(8, 20, 32, 0.12);
   border: 1px solid rgba(255, 255, 255, 0.32);
   border-radius: 4px;
