@@ -1,0 +1,349 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 230vh;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  background: #0F0F0F;
+  color: #f5f7fa;
+}
+
+.cars-hero {
+  position: relative;
+}
+
+.img-destaque {
+  width: 100%;
+  display: block;
+}
+
+.cars-hero__overlay {
+  position: absolute;
+  left: 19.2%;
+  bottom: clamp(15px, 7vw, 110px);
+  color: #fff;
+}
+
+.cars-hero__cta {
+  padding: 10px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  background: rgba(59, 59, 59, 0.18);
+  color: inherit;
+  letter-spacing: 0.1em;
+  font-family: 'Oswald';
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.cars-hero__cta:hover,
+.cars-hero__cta:focus-visible {
+  background: rgba(59, 59, 59, 0.18);
+  transform: translateY(-2px);
+}
+
+.cars-shell {
+  min-height: 100vh;
+  position: relative;
+  padding: clamp(24px, 5vw, 48px);
+}
+.barra-topo {
+  position: absolute;
+  top: clamp(20px, 5vw, 48px);
+  left: clamp(16px, 6vw, 64px);
+  right: clamp(16px, 6vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.logo-marca {
+  width: clamp(92px, 12vw, 132px);
+  height: auto;
+  display: block;
+}
+.avatar-perfil {
+  width: clamp(24px, 3vw, 34px);
+  height: clamp(24px, 3vw, 34px);
+  border-radius: 50%;
+  object-fit: cover;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.1));
+}
+
+.cars-modelos {
+  margin-left: 15%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 32px clamp(20px, 6vw, 64px);
+  font-weight: 700;
+}
+
+.cars-modelos__heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  font-family: 'Racing Sans One';
+}
+
+.cars-modelos__icon {
+  width: clamp(32px, 6vw, 64px);
+  height: auto;
+}
+
+.cars-modelos__tabs {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 6vw, 64px);
+  font-family: 'Oswald';
+  letter-spacing: 0.18em;
+}
+
+.cars-modelos__tab {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 6px 0;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.cars-modelos__tab::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.25);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.cars-modelos__tab--active {
+  color: #f8f8f8;
+}
+
+.cars-modelos__tab--active::after {
+  transform: scaleX(1);
+  background: #f5c44d;
+}
+
+.cars-modelos__tab--secondary {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.cars-modelos__tab--secondary::after {
+  transform: scaleX(1);
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.cars-modelos__layout {
+  display: flex;
+  align-items: center;
+  gap: clamp(24px, 6vw, 80px);
+  flex-wrap: wrap;
+}
+
+.cars-modelos__descricao {
+  margin-top: clamp(50px, 11vw, 70px);
+  margin-left: clamp(-250px, -100vw, -120px);
+  max-width: 400px;
+}
+
+.cars-modelos__titulo {
+  margin: 0 0 10px;
+  font-family: 'Oswald';
+  font-size: 20px;
+   color: #cfcfcf;
+}
+
+.cars-modelos__texto {
+  margin: 0 0 16px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: justify;
+}
+
+.cars-modelos__cta {
+  margin-top: 4px;
+}
+
+.cars-visor {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  margin-left: 22%;
+  margin-top: -300px;
+  position: relative;
+  z-index: 1;
+}
+
+.cars-visor__frame {
+  position: relative;
+  width: min(720px);
+  display: block;
+}
+
+.cars-visor__img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.4s ease;
+}
+
+.cars-fade {
+  transition: opacity 0.35s ease;
+}
+
+.cars-fade.is-fading {
+  opacity: 0;
+}
+
+.cars-visor__info {
+  position: absolute;
+  top: 0;
+  right: -65%;
+  width: 50%;
+  color: #f5f5f5;
+  font-family: 'Oswald';
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+
+.cars-visor__info-title {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #cfcfcf;
+  font-weight: 700;
+}
+
+.cars-visor__info-value {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+
+
+.cars-visor__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 72px;
+  width: 100%;
+  justify-content: center;
+}
+
+.cars-visor__arrow {
+  background: none;
+  border: none;
+  color: #f5f7fa;
+  width: auto;
+  height: auto;
+  cursor: pointer;
+  font-size: 1.5rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.cars-visor__arrow:hover,
+.cars-visor__arrow:focus-visible {
+  color: #f5c44d;
+  transform: translateY(-1px);
+}
+
+.cars-visor__label {
+  font-family: 'Racing Sans One';
+  font-size: 24px;
+}
+
+.cars-fade {
+  transition: opacity 0.35s ease;
+}
+
+.cars-fade.is-fading {
+  opacity: 0;
+}
+
+.cars-fabrica {
+  width: min(96%, 1240px);
+  display: grid;
+  margin-top: 5%;
+  margin-left: 4.5%;
+  grid-template-columns: minmax(320px, 520px) 1fr;
+  gap: clamp(24px, 6vw, 48px);
+  align-items: start;
+}
+
+.cars-fabrica__image img {
+  width: 100%;
+ 
+  display: block;
+  border: 6px solid #777;
+}
+
+.cars-fabrica__heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(2.2rem, 5.5vw, 3.5rem);
+  font-family: 'Racing Sans One';
+}
+
+.cars-fabrica__text {
+  display: grid;
+  gap: 10px;
+  color: #f5f5f5;
+}
+
+.cars-fabrica__subtitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Oswald';
+}
+
+.cars-fabrica__body {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(245, 245, 245, 0.9);
+  text-align: justify;
+}
+
+.navegacao-inferior {
+  position: absolute;
+  left: 48.5%;
+  transform: translateX(-50%);
+  transform: translateY(601%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  letter-spacing: 0.25em;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+}
+.rotulo-menu {
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+}

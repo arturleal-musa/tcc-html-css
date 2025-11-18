@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Zone</title>
+    <link rel="stylesheet" href="css/cars.css" />
+  </head>
+  <body>
+    <div class="cars-hero">
+      <img class="img-destaque" src="img/destaque.png" alt="Lamborghini em destaque" />
+      <div class="cars-hero__overlay">
+        <a class="cars-hero__cta" href="personalizacao.html" type="button">CONFIGURE DO SEU JEITO</a>
+      </div>
+    </div>
+    <header class="barra-topo">
+      <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
+      <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+    </header>
+
+    <section class="cars-modelos">
+      <div class="cars-modelos__heading">
+        <span class="cars-modelos__label">MODELOS</span>
+        <img class="cars-modelos__icon" src="img/lambobull.png" alt="Ícone Lamborghini" />
+      </div>
+      <div class="cars-modelos__tabs">
+        <button class="cars-modelos__tab cars-modelos__tab--active" type="button">FORÇA</button>
+        <button class="cars-modelos__tab cars-modelos__tab--secondary" type="button">MODELOS EXCLUSIVOS</button>
+      </div>
+
+      <div class="cars-modelos__layout">
+        <div class="cars-modelos__descricao">
+          <h3 class="cars-modelos__titulo">CONHEÇA O MODELO</h3>
+          <p class="cars-modelos__texto cars-fade" id="cars-descricao">
+            A Lamborghini Urus é o primeiro Super SUV (Super Sport Utility Vehicle) do mundo, unindo a alma de um superesportivo com a funcionalidade prática de um utilitário esportivo. Impulsionado pelo motor V8 biturbo de 4,0 litros da Lamborghini.
+          </p>
+          <a class="cars-hero__cta cars-modelos__cta" href="personalizacao.html" type="button">CONFIGURE DO SEU JEITO</a>
+        </div>
+
+        <div class="cars-visor">
+          <div class="cars-visor__frame">
+            <img class="cars-visor__img cars-fade" id="cars-visor-img" src="img/urus.png" alt="Lamborghini Urus" />
+            <div class="cars-visor__info">
+                <span class="cars-visor__info-title">Cavalos de Potência</span>
+                <span class="cars-visor__info-value cars-fade" id="cars-info-hp">650cv</span>
+                <span class="cars-visor__info-title">Motor</span>
+                <span class="cars-visor__info-value cars-fade" id="cars-info-motor">V8</span>
+                <span class="cars-visor__info-title">Torque</span>
+                <span class="cars-visor__info-value cars-fade" id="cars-info-torque">86,7 kgfm</span>
+            </div>
+          </div>
+          <div class="cars-visor__controls">
+            <button class="cars-visor__arrow cars-visor__arrow--left" type="button" aria-label="Anterior">‹</button>
+            <span class="cars-visor__label cars-fade" id="cars-visor-label">URUS</span>
+            <button class="cars-visor__arrow cars-visor__arrow--right" type="button" aria-label="Próximo">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <section class="cars-fabrica">
+      <div class="cars-fabrica__image">
+        <img src="img/historialambo.png" alt="Fábrica da Lamborghini" />
+      </div>
+      <div class="cars-fabrica__text">
+        <div class="cars-fabrica__heading">
+          <span class="cars-modelos__label">FÁBRICA LAMBORGHINI</span>
+          <img class="cars-modelos__icon" src="img/lambobull.png" alt="Ícone Lamborghini" />
+        </div>
+        <p class="cars-fabrica__subtitle">Automobili Lamborghini S.p.A.</p>
+        <p class="cars-fabrica__body">
+          Fundada por Ferruccio Lamborghini em 1963, a Automobili Lamborghini tem sede em Sant’Agata Bolognese, próximo a Bolonha, e produz alguns dos superesportivos mais icônicos e desejados do mundo.
+        </p>
+        <p class="cars-fabrica__body">
+          A linha atual inclui o Revuelto, com motor V12 HPEV (High Performance Electrified Vehicle); o Urus SE, um Super SUV híbrido plug-in; e o novo HPEV Temerario, líder em sua categoria — cada um representando uma expressão única de desempenho e design de ponta.
+        </p>
+        <p class="cars-fabrica__body">
+          Historicamente, a Automobili Lamborghini criou uma série de carros dos sonhos, incluindo o 350 GT, Miura, Espada, Countach, Diablo e Murciélago, além de modelos exclusivos e de edição limitada, como o Reventón, Sesto Elemento, Veneno e Centenario.
+        </p>
+        <p class="cars-fabrica__body">
+          Facilmente reconhecíveis por suas linhas ousadas, proporções marcantes e superfícies inconfundíveis, o DNA de design intransigente da Automobili Lamborghini sempre complementa as inovações tecnológicas e o desempenho excepcional de seus automóveis.
+        </p>
+        <p class="cars-fabrica__body">
+          Automobili Lamborghini S.p.A.<br />
+          Via Modena, 12<br />
+          40019 Sant’Agata Bolognese (Bologna)<br />
+          Italy
+        </p>
+      </div>
+    </section>
+
+    <footer class="navegacao-inferior" aria-label="Menu principal">
+      <a class="rotulo-menu" href="index.html">MENU</a>
+    </footer>
+
+  </body>
+  <script>
+    (function () {
+      const img = document.getElementById("cars-visor-img");
+      const label = document.getElementById("cars-visor-label");
+      const desc = document.getElementById("cars-descricao");
+      const hp = document.getElementById("cars-info-hp");
+      const motor = document.getElementById("cars-info-motor");
+      const torque = document.getElementById("cars-info-torque");
+      const buttons = document.querySelectorAll(".cars-visor__arrow");
+      const fades = [img, label, desc, hp, motor, torque];
+
+      const models = {
+        urus: {
+          img: "img/urus.png",
+          label: "URUS",
+          desc:
+            "A Lamborghini Urus é o primeiro Super SUV (Super Sport Utility Vehicle) do mundo, unindo a alma de um superesportivo com a funcionalidade prática de um utilitário esportivo. Impulsionado pelo motor V8 biturbo de 4,0 litros da Lamborghini.",
+          hp: "650cv",
+          motor: "V8",
+          torque: "86,7 kgfm"
+        },
+        revuelto: {
+          img: "img/revuelto.png",
+          label: "REVUELTO",
+          desc:
+            "Pouco antes do 60º aniversário da marca, a Lamborghini revelou o Revuelto, o primeiro superesportivo híbrido HPEV (High Performance Electrified Vehicle). Com o Revuelto, a Lamborghini estabeleceu um novo padrão em desempenho, tecnologia a bordo e prazer ao dirigir.",
+          hp: "1015cv",
+          motor: "V12",
+          torque: "77,0 kgfm"
+        }
+      };
+
+      let current = "urus";
+
+      function fadeOut() {
+        fades.forEach((el) => el && el.classList.add("is-fading"));
+      }
+
+      function fadeIn() {
+        fades.forEach((el) => el && el.classList.remove("is-fading"));
+      }
+
+      function update(modelKey) {
+        const m = models[modelKey];
+        if (!m) return;
+        fadeOut();
+
+        const swap = () => {
+          label.textContent = m.label;
+          desc.textContent = m.desc;
+          hp.textContent = m.hp;
+          motor.textContent = m.motor;
+          torque.textContent = m.torque;
+          img.onload = () => fadeIn();
+          img.src = m.img;
+          img.alt = `Lamborghini ${m.label}`;
+          if (img.complete) fadeIn();
+          current = modelKey;
+        };
+
+        setTimeout(swap, 120);
+      }
+
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          update(current === "urus" ? "revuelto" : "urus");
+        });
+      });
+    })();
+  </script>
+</html>
