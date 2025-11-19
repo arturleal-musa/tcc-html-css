@@ -9,8 +9,8 @@
   <body class="personalizacao-page">
     <div class="custom-wrapper">
       <header class="barra-topo">
-        <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
-        <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+        <a href="index.html"><img class="logo-marca" src="img/logo.png" alt="Speed Zone" /></a>
+        <a href="login.html"><img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" /></a>
       </header>
 
       <aside class="custom-menu">
@@ -19,9 +19,9 @@
           <span class="custom-menu__title custom-menu__title--underline">EXTERIOR</span>
         </div>
         <div class="custom-menu__items">
-          <div class="custom-menu__item">
+          <div class="custom-menu__item" data-trigger-pintura>
             <img src="img/pinturaicon.png" alt="Pintura" />
-            <span>PINTURA</span>
+            <span>PINTURA</span></a>
           </div>
           <div class="custom-menu__item">
             <img src="img/tetoicon.png" alt="Teto" />
@@ -36,7 +36,26 @@
             <span>BODYKITS</span>
           </div>
         </div>
+        <button class="custom-menu__cta" type="button">FINALIZAR COMPRA</button>
       </aside>
     </div>
+
+    <div class="custom-paint">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-paint__swatches">
+        <span class="custom-swatch" data-color="cinza-1" style="background: #A0A0A3;"></span>
+        <span class="custom-swatch" data-color="preto" style="background: #0C0C0B;"></span>
+        <span class="custom-swatch" data-color="verde" style="background: #578A20;"></span>
+        <span class="custom-swatch" data-color="dourado" style="background: #EBBD39;"></span>
+        <span class="custom-swatch custom-swatch--active" data-color="laranja" style="background: #c94b24;"></span>
+        <span class="custom-swatch" data-color="vermelho" style="background: #AF2025;"></span>
+        <span class="custom-swatch" data-color="azul-escuro" style="background: #00174C;"></span>
+        <span class="custom-swatch" data-color="azul" style="background: #3460B2;"></span>
+        <span class="custom-swatch" data-color="azul-acinzentado" style="background: #2f5167;"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <script src="js/personalizacao.js"></script>
   </body>
 </html>

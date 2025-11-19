@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url("../img/brands_bg.png") center/cover no-repeat fixed, #010101;
+  font-family: "Racing Sans One";
+  color: #f5f7fa;
+  overflow: hidden;
+}
+
+.login-page,
+.login-shell,
+.login-title,
+.login-label,
+.login-link,
+.login-button,
+.login-tagline {
+  font-family: "Racing Sans One";
+}
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.login-shell {
+  width: min(520px, 100%);
+  display: grid;
+  gap: clamp(18px, 4vw, 28px);
+  text-align: center;
+  color: #f8f8f8;
+}
+
+.login-logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.login-title {
+  margin: 0;
+  font-size: clamp(1.3rem, 4vw, 1.8rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.login-form {
+  display: grid;
+  gap: clamp(12px, 3vw, 18px);
+}
+
+.login-label {
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.login-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.login-input::placeholder {
+  color: #777;
+}
+
+.login-link {
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
+.login-button {
+  margin: clamp(8px, 2vw, 16px) auto 0;
+  padding: 12px 22px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  background: #242424;
+  color: #f8f8f8;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-button:hover,
+.login-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.login-tagline {
+  margin: clamp(12px, 3vw, 22px) 0 0;
+  font-size: clamp(1rem, 3.4vw, 1.4rem);
+  font-style: italic;
+  color: #f1f1f1;
+}

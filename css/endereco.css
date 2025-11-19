@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url("../img/brands_bg.png") center/cover no-repeat fixed, #010101;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #f5f7fa;
+  overflow-x: hidden;
+}
+
+.endereco-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(24px, 5vw, 48px);
+  gap: clamp(24px, 5vw, 36px);
+}
+
+.endereco-shell {
+  width: min(1100px, 100%);
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(24px, 6vw, 48px);
+  align-items: center;
+}
+
+.endereco-form {
+  display: grid;
+  gap: 10px;
+}
+
+.endereco-legenda {
+  margin-bottom: 10px;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  letter-spacing: 0.05em;
+  font-size: clamp(1rem, 3vw, 1.3rem);
+}
+
+.endereco-label {
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.07em;
+}
+
+.endereco-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0d0d0d;
+  font-size: 0.95rem;
+  font-family: inherit;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.endereco-input::placeholder {
+  color: #555;
+}
+
+.endereco-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.endereco-button {
+  padding: 12px 22px;
+  border: 1px solid #c7c7c7;
+  border-radius: 6px;
+  background: #242424;
+  color: #f8f8f8;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.endereco-button:hover,
+.endereco-button:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.endereco-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.endereco-brand img {
+  width: clamp(240px, 28vw, 320px);
+  height: auto;
+  display: block;
+}
+
+.endereco-tagline {
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: clamp(1rem, 3.6vw, 1.4rem);
+  font-style: italic;
+  color: #f1f1f1;
+}
+
+@media (max-width: 960px) {
+  .endereco-shell {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .endereco-form {
+    text-align: left;
+  }
+
+  .endereco-actions {
+    justify-content: center;
+  }
+}
