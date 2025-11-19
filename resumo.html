@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Speed Zone</title>
+    <link rel="stylesheet" href="css/resumo.css" />
+  </head>
+  <body>
+  
+      <img class="img-destaque" src="img/revueltofinal.png" alt="Lamborghini em destaque" />
+    
+    <header class="barra-topo">
+      <img class="logo-marca" src="img/logo.png" alt="Speed Zone" />
+      <img class="avatar-perfil" src="img/perfil.png" alt="Perfil do usuário" />
+    </header>
+    <div class="resumo-bloco-preto">
+      <section class="resumo-ficha">
+        <h2 class="resumo-ficha__titulo">FICHA TÉCNICA DO SEU REVUELTO</h2>
+        <div class="resumo-tabs" role="tablist" aria-label="Seções do carro">
+          <button class="resumo-tab resumo-tab--ativo" type="button">EXTERIOR</button>
+          <button class="resumo-tab" type="button">INTERIOR</button>
+        </div>
+
+        <div class="resumo-item">
+          <div class="resumo-swatch resumo-swatch--vermelho" aria-hidden="true"></div>
+          <div class="resumo-textos">
+            <p class="resumo-label">COR DA PINTURA</p>
+            <p class="resumo-valor">NOME DA COR - HEXACOR</p>
+          </div>
+        </div>
+
+        <div class="resumo-item">
+          <div class="resumo-swatch" aria-hidden="true"></div>
+          <div class="resumo-textos">
+            <p class="resumo-label">PERSONALIZAÇÕES DO TETO</p>
+            <p class="resumo-valor">NOME PEÇA - TIPO MATERIAL</p>
+          </div>
+        </div>
+
+        <div class="resumo-item">
+          <div class="resumo-swatch" aria-hidden="true"></div>
+          <div class="resumo-textos">
+            <p class="resumo-label">PERSONALIZAÇÕES DOS PNEUS</p>
+            <p class="resumo-valor">NOME PEÇA - TIPO MATERIAL</p>
+          </div>
+        </div>
+
+        <div class="resumo-item">
+          <div class="resumo-swatch" aria-hidden="true"></div>
+          <div class="resumo-textos">
+            <p class="resumo-valor resumo-valor--pinça">NOME PINÇA DE FREIO - COLORAÇÃO</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="resumo-card">
+        <div class="resumo-card__faixa">
+          <span class="faixa verde"></span>
+          <span class="faixa branca"></span>
+          <span class="faixa vermelha"></span>
+        </div>
+        <img class="resumo-card__carro" src="img/revuelto.png" alt="Lamborghini" />
+
+        <div class="resumo-card__dados">
+          <div class="resumo-coluna">
+            <p class="resumo-coluna__titulo">Cavalos de Potência</p>
+            <p class="resumo-coluna__valor">1015cv</p>
+          </div>
+          <div class="resumo-coluna">
+            <p class="resumo-coluna__titulo">Torque</p>
+            <p class="resumo-coluna__valor">77,0 kgfm</p>
+          </div>
+          <div class="resumo-coluna">
+            <p class="resumo-coluna__titulo">Motor</p>
+            <p class="resumo-coluna__valor">v12</p>
+          </div>
+        </div>
+
+        <div class="resumo-card__acoes">
+          <a class="resumo-card__btn" href="personalizacao.html">PERSONALIZAR</a>
+          <a class="resumo-card__btn" href="#">GERAR PDF</a>
+        </div>
+        <a class="resumo-card__btn resumo-card__btn--full" href="compra.html">FINALIZAR COMPRA</a>
+      </section>
+    </div>
+    <footer class="navegacao-inferior" aria-label="Menu principal">
+      <a class="rotulo-menu" href="index.html">MENU</a>
+    </footer>
+  </body>
+</html>

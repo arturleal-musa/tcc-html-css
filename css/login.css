@@ -8,23 +8,12 @@
 }
 
 body {
-  margin: 0;
   min-height: 100vh;
   min-width: 100vw;
   background: url("../img/brands_bg.png") center/cover no-repeat fixed, #010101;
-  font-family: "Racing Sans One";
-  color: #f5f7fa;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #f5f5f5;
   overflow: hidden;
-}
-
-.login-page,
-.login-shell,
-.login-title,
-.login-label,
-.login-link,
-.login-button,
-.login-tagline {
-  font-family: "Racing Sans One";
 }
 
 .login-page {
@@ -40,10 +29,11 @@ body {
   gap: clamp(18px, 4vw, 28px);
   text-align: center;
   color: #f8f8f8;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
 }
 
 .login-logo {
-  width: 150px;
+  width: 120px;
   height: auto;
   margin: 0 auto;
   display: block;
@@ -103,10 +93,11 @@ body {
   color: #f8f8f8;
   font-size: 1rem;
   font-weight: 700;
+  text-decoration: none;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  text-decoration: none;
   cursor: pointer;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 

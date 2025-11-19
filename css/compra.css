@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url("../img/brands_bg.png") center/cover no-repeat fixed, #0b0b0b;
+  color: #f5f5f5;
+  font-family: "Poppins", "Segoe UI", Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+.compra-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(18px, 4vw, 32px);
+  gap: clamp(16px, 4vw, 24px);
+  min-height: 100vh;
+}
+
+.compra-topo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.compra-logo {
+  width: clamp(120px, 18vw, 140px);
+  height: auto;
+  display: block;
+  margin-top: 2%;
+}
+
+.compra-grid {
+  width: min(1200px, 100%);
+  height: 650px;
+  display: grid;
+  align-items: center;
+  margin-top: clamp(8px, 2vw, 16px);
+}
+
+.compra-info {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  justify-items: start;
+  margin-left: clamp(8px, 2vw, 16px);
+  margin-top: 1%;
+}
+
+.compra-saudacao,
+.compra-projeto {
+  font-family: "Racing Sans One";
+  letter-spacing: 0.07em;
+}
+
+.compra-saudacao {
+  font-size: clamp(1.3rem, 3.2vw, 1.8rem);
+  line-height: 1.1;
+}
+
+.compra-projeto {
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  line-height: 1.1;
+}
+
+.compra-id {
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.compra-escudo {
+  width: clamp(60px, 9vw, 90px);
+  height: auto;
+  margin-top: clamp(10px, 2vw, 16px);
+}
+
+.compra-carro {
+  justify-items: center;
+  position: relative;
+  margin-top: 5%;
+  
+}
+
+.compra-carro__img {
+  width: min(430px, 100vw);
+  height: auto;
+  display: block;
+  margin-left: 17%;
+}
+
+.compra-carro .compra-escudo {
+  position: absolute;
+  top: 14%;
+}
+
+.compra-metodos {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+  justify-items: end;
+  margin-right: 5%;
+  margin-top: -60%;
+  position: relative;
+  z-index: 10; /* garante que os links fiquem clicáveis acima de sobreposições */
+}
+
+.compra-pill {
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: rgba(20, 20, 20, 0.75);
+  color: #f5f5f5;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  width: clamp(240px, 22vw, 320px);
+  text-align: center;
+}
+
+.compra-pill--ativo {
+  border-color: #c57c1e;
+  box-shadow: 0 0 0 1px rgba(197, 124, 30, 0.4);
+}
+
+.compra-total {
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-content: space-between;
+  width: clamp(240px, 22vw, 320px);
+}
+
+.compra-total__label {
+  font-family: "Racing Sans One";
+  font-size: 1.2rem;
+}
+
+.compra-total__valor {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-left: 4%;
+}
+
+.compra-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: clamp(10px, 2vw, 18px);
+  width: clamp(240px, 22vw, 320px);
+  position: relative;
+  z-index: 11;
+}
+
+.compra-btn {
+  display: inline-block;
+  text-align: center;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 4px;
+  background: #242424;
+  color: #f8f8f8;
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: 0.94rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  z-index: 12;
+}
+
+.compra-btn:hover,
+.compra-btn:focus-visible {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+.compra-tagline {
+  margin-top: clamp(8px, 3vw, 16px);
+  font-family: "Racing Sans One", "Poppins", sans-serif;
+  font-size: clamp(1rem, 3.6vw, 1.4rem);
+  font-style: italic;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+@media (max-width: 980px) {
+  .compra-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;
+  }
+
+  .compra-info,
+  .compra-metodos {
+    text-align: center;
+  }
+
+  .compra-total {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
