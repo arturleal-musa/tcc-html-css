@@ -11,25 +11,39 @@
 
   const container = document.querySelector(".custom-paint__swatches");
   const swatches = container ? Array.from(container.querySelectorAll(".custom-swatch")) : [];
-  const body = document.body;
-  const defaultBg = body ? getComputedStyle(body).background : "";
+  const bgLayer = document.querySelector(".personalizacao-bg");
+  const DEFAULT_BG = 'url("img/revueltoinicial.png")';
+  const RED_BG = 'url("img/revueltovermelho.png")';
+  let queuedBg = null;
+
+  if (bgLayer && !bgLayer.style.backgroundImage) {
+    bgLayer.style.backgroundImage = DEFAULT_BG;
+    bgLayer.dataset.bg = DEFAULT_BG;
+  }
+
+  if (bgLayer) {
+    bgLayer.addEventListener("transitionend", (event) => {
+      if (event.propertyName !== "opacity") return;
+      if (!bgLayer.classList.contains("is-fading")) return;
+      if (queuedBg) {
+        bgLayer.style.backgroundImage = queuedBg;
+        queuedBg = null;
+      }
+      requestAnimationFrame(() => {
+        bgLayer.classList.remove("is-fading");
+      });
+    });
+  }
 
   function applyBackground(forRed) {
-    if (!body) return;
-    if (forRed) {
-      body.style.backgroundImage = 'url("img/revueltovermelho.png")';
-      body.style.backgroundPosition = "center";
-      body.style.backgroundRepeat = "no-repeat";
-      body.style.backgroundSize = "cover";
-      body.style.backgroundAttachment = "fixed";
-    } else if (defaultBg) {
-      body.style.background = defaultBg;
+    if (!bgLayer) return;
+    const next = forRed ? RED_BG : DEFAULT_BG;
+    if (bgLayer.dataset.bg === next) return;
+    bgLayer.dataset.bg = next;
+    queuedBg = next;
+    if (!bgLayer.classList.contains("is-fading")) {
+      bgLayer.classList.add("is-fading");
     }
-    body.style.minHeight = "100vh";
-    body.style.minWidth = "100%";
-    body.style.margin = "0";
-    body.style.padding = "0";
-    body.style.overflowX = "hidden";
   }
 
   function centerSwatch(target) {

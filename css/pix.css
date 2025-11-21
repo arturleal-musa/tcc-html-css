@@ -1,0 +1,168 @@
+@import url("https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  min-width: 100vw;
+  background: url("../img/brands_bg.png") center/cover no-repeat fixed, #0b0b0b;
+  font-family: "Racing Sans One";
+  overflow-x: hidden;
+  color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(16px, 4vw, 32px);
+  gap: clamp(24px, 5vw, 36px);
+}
+
+.pix-card {
+  width: min(1060px, 100%);
+  background: rgba(1, 1, 1, 0.75);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+  padding: clamp(20px, 5vw, 48px);
+  display: grid;
+  gap: clamp(20px, 4vw, 36px);
+}
+
+.pix-card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.pix-card__heading {
+  font-family: "Racing Sans One";
+  font-size: clamp(1rem, 3vw, 1.3rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pix-card__logo {
+  width: clamp(120px, 14vw, 150px);
+  height: auto;
+}
+
+.pix-card__grid {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: clamp(20px, 5vw, 60px);
+  align-items: center;
+}
+
+.pix-card__qr {
+  background: rgba(255, 255, 255, 0.08);
+  padding: clamp(12px, 2vw, 18px);
+  width: 280px;
+  height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pix-card__qr img {
+  width: clamp(200px, 20vw, 240px);
+  height: auto;
+  display: block;
+}
+
+.pix-card__info {
+  display: grid;
+  gap: clamp(18px, 3vw, 26px);
+}
+
+.pix-label {
+  font-family: "Racing Sans One";
+  font-size: 20px;
+  letter-spacing: 0.08em;
+}
+
+.pix-details {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.pix-details div {
+  display: grid;
+  grid-template-columns: 70px auto;
+  align-items: center;
+}
+
+.pix-details dt {
+  font-family: "Racing Sans One";
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.pix-details dd {
+  margin: 0;
+  font-size: 1rem;
+  font-family: "Racing Sans One";
+  font-weight: 600;
+}
+
+.pix-btn {
+  display: inline-block;
+  width: fit-content;
+  padding: 12px 26px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 6px;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-family: "Racing Sans One";
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(20, 20, 20, 0.85);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pix-btn:hover,
+.pix-btn:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.45);
+}
+
+.pix-tagline {
+  font-family: "Racing Sans One";
+  font-style: italic;
+  text-align: center;
+  margin-top: clamp(8px, 3vw, 16px);
+  font-size: clamp(1rem, 3.6vw, 1.4rem);
+  font-style: italic;
+  color: #f1f1f1;
+}
+
+@media (max-width: 860px) {
+  .pix-card__grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .pix-details div {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .pix-details dt {
+    justify-self: center;
+  }
+
+  .pix-card__info {
+    justify-items: center;
+  }
+}

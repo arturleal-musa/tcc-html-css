@@ -16,10 +16,26 @@ body {
 }
 
 body {
-  background: url("../img/revueltoinicial.png") center/cover no-repeat fixed;
+  background: #000;
   color: #f5f5f5;
   overflow-x: hidden;
   width: 100vw;
+}
+
+.personalizacao-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("../img/revueltoinicial.png") center/cover no-repeat fixed;
+  z-index: -1;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.personalizacao-bg.is-fading {
+  opacity: 0;
 }
 
 .personalizacao-page .barra-topo {
@@ -97,6 +113,12 @@ body {
   height: auto;
   object-fit: contain;
   display: block;
+  transition: transform 0.2s ease;
+}
+
+.custom-menu__item:hover img,
+.custom-menu__item:focus-visible img {
+  transform: scale(1.08);
 }
 
 .custom-menu__cta {
@@ -159,12 +181,19 @@ body {
   box-shadow: inset 0 0 0 1px rgba(153, 153, 153, 0.2);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
 .custom-swatch--active {
   background: #c94b24;
   width: clamp(110px, 18vw, 140px);
   height: clamp(110px, 18vw, 140px);
+}
+
+.custom-swatch:hover:not(.custom-swatch--active),
+.custom-swatch:focus-visible:not(.custom-swatch--active) {
+  transform: scale(1.08);
 }
 
 .custom-swatch::after {
