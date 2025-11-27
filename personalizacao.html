@@ -16,25 +16,43 @@
 
       <aside class="custom-menu">
         <div class="custom-menu__heading">
-          <span class="custom-menu__title custom-menu__title--active">INTERIOR</span>
-          <span class="custom-menu__title custom-menu__title--underline">EXTERIOR</span>
+          <span class="custom-menu__title custom-menu__title--underline" data-mode="exterior">EXTERIOR</span>
+          <span class="custom-menu__title" data-mode="interior">INTERIOR</span>
         </div>
-        <div class="custom-menu__items">
-          <div class="custom-menu__item" data-trigger-pintura>
+        <div class="custom-menu__items custom-menu__items--exterior is-active">
+          <div class="custom-menu__item" data-trigger-pintura data-item="pintura">
             <img src="img/pinturaicon.png" alt="Pintura" />
-            <span>PINTURA</span></a>
+            <span>PINTURA</span>
           </div>
-          <div class="custom-menu__item">
+          <div class="custom-menu__item" data-trigger-teto data-item="teto">
             <img src="img/tetoicon.png" alt="Teto" />
             <span>TETO</span>
           </div>
-          <div class="custom-menu__item">
+          <div class="custom-menu__item" data-trigger-pneus data-item="pneus">
             <img src="img/pneusicon.png" alt="Pneus" />
             <span>PNEUS</span>
           </div>
-          <div class="custom-menu__item">
+          <div class="custom-menu__item" data-item="bodykits">
             <img src="img/bodykitsicon.png" alt="Bodykits" />
             <span>BODYKITS</span>
+          </div>
+        </div>
+        <div class="custom-menu__items custom-menu__items--interior">
+          <div class="custom-menu__item" data-trigger-dashboard data-item="painel">
+            <img src="img/painelicon.png" alt="Painel" />
+            <span>PAINEL</span>
+          </div>
+          <div class="custom-menu__item" data-trigger-color data-item="cor">
+            <img src="img/coricon.png" alt="Cor" />
+            <span>COR</span>
+          </div>
+          <div class="custom-menu__item" data-trigger-seat data-item="banco">
+            <img src="img/bancoicon.png" alt="Banco" />
+            <span>BANCO</span>
+          </div>
+          <div class="custom-menu__item" data-item="costura">
+            <img src="img/costuraicon.png" alt="Costura" />
+            <span>COSTURA</span>
           </div>
         </div>
         <a href="resumo.html"><button class="custom-menu__cta" type="button">FINALIZAR COMPRA</button></a>
@@ -53,6 +71,57 @@
         <span class="custom-swatch" data-color="azul-escuro" style="background: #00174C;"></span>
         <span class="custom-swatch" data-color="azul" style="background: #3460B2;"></span>
         <span class="custom-swatch" data-color="azul-acinzentado" style="background: #2f5167;"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-dashboard">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-dashboard__swatches">
+        <span class="custom-dash custom-dash--active" data-dash="painel1" style="background-image: url('img/painel1.jfif');"></span>
+        <span class="custom-dash" data-dash="painel2" style="background-image: url('img/painel2.jfif');"></span>
+        <span class="custom-dash" data-dash="painel3" style="background-image: url('img/painel3.jfif');"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-wheels">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-wheels__swatches">
+        <span class="custom-wheel custom-wheel--active" data-wheel="roda1" style="background-image: url('img/roda1.png');"></span>
+        <span class="custom-wheel" data-wheel="roda2" style="background-image: url('img/roda2.png');"></span>
+        <span class="custom-wheel" data-wheel="roda3" style="background-image: url('img/roda3.png');"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-roofs">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-roofs__swatches">
+        <span class="custom-roof custom-roof--active" data-roof="teto1" style="background-image: url('img/teto1.png');"></span>
+        <span class="custom-roof" data-roof="teto2" style="background-image: url('img/teto2.png');"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-color">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-color__swatches">
+        <span class="custom-color__swatch custom-color__swatch--active" data-color-option="preto" style="background: #000000;"></span>
+        <span class="custom-color__swatch" data-color-option="azul" style="background: #3d7484;"></span>
+        <span class="custom-color__swatch" data-color-option="marrom" style="background: #4f4b2d;"></span>
+        <span class="custom-color__swatch" data-color-option="vermelho" style="background: #832728;"></span>
+        <span class="custom-color__swatch" data-color-option="branco" style="background: #cfcabb;"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-seat">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-seat__swatches">
+        <span class="custom-seat__swatch custom-seat__swatch--active" data-seat="banco1" style="background-image: url('img/banco1.jfif');"></span>
+        <span class="custom-seat__swatch" data-seat="banco2" style="background-image: url('img/banco2.jfif');"></span>
+        <span class="custom-seat__swatch" data-seat="banco3" style="background-image: url('img/banco3.jfif');"></span>
       </div>
       <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
     </div>

@@ -55,6 +55,15 @@ body {
   font-family: "Racing Sans One", sans-serif;
 }
 
+.resumo-list {
+  display: grid;
+  gap: 24px;
+}
+
+.resumo-list--hidden {
+  display: none;
+}
+
 .resumo-ficha__titulo {
   font-family: "Racing Sans One", sans-serif;
   font-size: clamp(1.3rem, 3vw, 1.6rem);
@@ -105,6 +114,30 @@ body {
 
 .resumo-swatch--vermelho {
   background: #a32c2c;
+}
+
+.resumo-swatch--teto {
+  background: url("../img/teto2_bg.jfif") center/cover no-repeat;
+}
+
+.resumo-swatch--pneus {
+  background: url("../img/roda2.png") center/cover no-repeat;
+}
+
+.resumo-swatch--painel {
+  background: url("../img/painel1.jfif") center/cover no-repeat;
+}
+
+.resumo-swatch--cor-interior {
+  background: url("../img/cor1.jfif") center/cover no-repeat;
+}
+
+.resumo-swatch--banco {
+  background: url("../img/banco2.jfif") center/cover no-repeat;
+}
+
+.resumo-swatch--costura {
+  /* background: url("../img/costuraicon.png") center/50% no-repeat, #111; */
 }
 
 .resumo-swatch--vermelho::after {

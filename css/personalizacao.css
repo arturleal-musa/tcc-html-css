@@ -27,7 +27,7 @@ body {
   inset: 0;
   width: 100vw;
   height: 100vh;
-  background: url("../img/revueltoinicial.png") center/cover no-repeat fixed;
+  background: url("../img/revueltoinicial.jfif") center/cover no-repeat fixed;
   z-index: -1;
   opacity: 1;
   transition: opacity 0.4s ease;
@@ -81,10 +81,14 @@ body {
   gap: clamp(18px, 5vw, 38px);
   font-family: 'Racing Sans One';
   font-size: clamp(1rem, 3vw, 1.4rem);
+  cursor: pointer;
+  transition: color 1.2s ease-in-out;
 }
 
 .custom-menu__title {
   color: #e7e7e7;
+  cursor: pointer;
+  transition: color 1.2s ease-in-out, text-decoration-color 1.2s ease-in-out;
 }
 
 .custom-menu__title--underline {
@@ -92,8 +96,13 @@ body {
 }
 
 .custom-menu__items {
-  display: grid;
+  display: none;
   gap: clamp(12px, 3vw, 18px);
+  transition: opacity 0.7s ease-in-out;
+}
+
+.custom-menu__items.is-active {
+  display: grid;
 }
 
 .custom-menu__item {
@@ -106,6 +115,7 @@ body {
   font-size: clamp(0.95rem, 2.6vw, 1.1rem);
   font-weight: 700;
   cursor: pointer;
+  transition: color 1.2s ease-in-out;
 }
 
 .custom-menu__item img {
@@ -113,7 +123,189 @@ body {
   height: auto;
   object-fit: contain;
   display: block;
+  transition: transform 1s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.custom-menu__items.is-fading {
+  opacity: 0.25;
+}
+
+.custom-dashboard {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100vw;
+  height: 22%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 50px);
+  background: rgba(0, 0, 0, 0.82);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 10;
+}
+
+.custom-dashboard.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-dashboard__swatches {
+  display: flex;
+  align-items: center;
+  gap: clamp(38px, 8vw, 80px);
+}
+
+.custom-dash {
+  width: clamp(62px, 12vw, 90px);
+  height: clamp(62px, 12vw, 90px);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
   transition: transform 0.2s ease;
+  background: #111 center/cover no-repeat;
+}
+
+.custom-dash.custom-dash--active {
+  width: clamp(110px, 18vw, 140px);
+  height: clamp(110px, 18vw, 140px);
+}
+
+.custom-dash:hover:not(.custom-dash--active),
+.custom-dash:focus-visible:not(.custom-dash--active) {
+  transform: scale(1.08);
+}
+
+.custom-color {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100vw;
+  height: 22%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 50px);
+  background: rgba(0, 0, 0, 0.82);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 10;
+}
+
+.custom-color.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-color__swatches {
+  display: flex;
+  align-items: center;
+  gap: clamp(38px, 8vw, 80px);
+}
+
+.custom-color__swatch {
+  width: clamp(62px, 12vw, 90px);
+  height: clamp(62px, 12vw, 90px);
+  border-radius: 6px;
+  box-shadow: inset 0 0 0 1px rgba(153, 153, 153, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.custom-color__swatch--active {
+  width: clamp(110px, 18vw, 140px);
+  height: clamp(110px, 18vw, 140px);
+  border-radius: 6px;
+}
+
+.custom-color__swatch:hover:not(.custom-color__swatch--active),
+.custom-color__swatch:focus-visible:not(.custom-color__swatch--active) {
+  transform: scale(1.08);
+}
+
+.custom-color__swatch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0) 55%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+}
+
+.custom-color__swatch--active::after {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 60%);
+}
+
+.custom-seat {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100vw;
+  height: 22%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 50px);
+  background: rgba(0, 0, 0, 0.82);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 10;
+}
+
+.custom-seat.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-seat__swatches {
+  display: flex;
+  align-items: center;
+  gap: clamp(38px, 8vw, 80px);
+}
+
+.custom-seat__swatch {
+  width: clamp(62px, 12vw, 90px);
+  height: clamp(62px, 12vw, 90px);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #111 center/cover no-repeat;
+}
+
+.custom-seat__swatch.custom-seat__swatch--active {
+  width: clamp(110px, 18vw, 140px);
+  height: clamp(110px, 18vw, 140px);
+}
+
+.custom-seat__swatch:hover:not(.custom-seat__swatch--active),
+.custom-seat__swatch:focus-visible:not(.custom-seat__swatch--active) {
+  transform: scale(1.08);
 }
 
 .custom-menu__item:hover img,
@@ -220,4 +412,116 @@ body {
   justify-content: center;
   cursor: pointer;
   font-size: 3rem;
+}
+
+/* Painel de pneus - igual ao de cores */
+.custom-wheels {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100vw;
+  height: 22%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 50px);
+  background: rgba(0, 0, 0, 0.82);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 10;
+}
+
+.custom-wheels.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-wheels__swatches {
+  display: flex;
+  align-items: center;
+  gap: clamp(38px, 8vw, 80px);
+}
+
+.custom-wheel {
+  width: clamp(62px, 12vw, 90px);
+  height: clamp(62px, 12vw, 90px);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #111 center/contain no-repeat;
+}
+
+.custom-wheel.custom-wheel--active {
+  width: clamp(110px, 18vw, 140px);
+  height: clamp(110px, 18vw, 140px);
+}
+
+.custom-wheel:hover:not(.custom-wheel--active),
+.custom-wheel:focus-visible:not(.custom-wheel--active) {
+  transform: scale(1.08);
+}
+
+/* Painel de tetos - igual aos demais */
+.custom-roofs {
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 100%);
+  width: 100vw;
+  height: 22%;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 8vw, 50px);
+  background: rgba(0, 0, 0, 0.82);
+  padding: clamp(12px, 3vw, 18px);
+  box-shadow: 0 -8px 26px rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+  z-index: 10;
+}
+
+.custom-roofs.is-open {
+  transform: translate(-50%, 0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.custom-roofs__swatches {
+  display: flex;
+  align-items: center;
+  gap: clamp(38px, 8vw, 80px);
+}
+
+.custom-roof {
+  width: clamp(62px, 12vw, 90px);
+  height: clamp(62px, 12vw, 90px);
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  background: #111 center/contain no-repeat;
+}
+
+.custom-roof.custom-roof--active {
+  width: clamp(110px, 18vw, 140px);
+  height: clamp(110px, 18vw, 140px);
+}
+
+.custom-roof:hover:not(.custom-roof--active),
+.custom-roof:focus-visible:not(.custom-roof--active) {
+  transform: scale(1.08);
 }
