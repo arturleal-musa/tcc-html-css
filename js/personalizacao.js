@@ -2,6 +2,7 @@
   const barPaint = document.querySelector(".custom-paint");
   const barDashboard = document.querySelector(".custom-dashboard");
   const barSeat = document.querySelector(".custom-seat");
+  const barPinca = document.querySelector(".custom-pinca");
   const barWheels = document.querySelector(".custom-wheels");
   const barRoofs = document.querySelector(".custom-roofs");
   const tabExterior = document.querySelector('[data-mode="exterior"]');
@@ -27,25 +28,29 @@
     const dashBtn = event.target.closest("[data-trigger-dashboard]");
     const seatBtn = event.target.closest("[data-trigger-seat]");
     const colorBtn = event.target.closest("[data-trigger-color]");
+    const pincaBtn = event.target.closest("[data-trigger-pinca]");
     if (paintBtn && barPaint) {
       event.preventDefault();
-      toggleBar(barPaint, [barDashboard, barWheels, barRoofs, barSeat, colorContainer && colorContainer.parentElement]);
+      toggleBar(barPaint, [barDashboard, barWheels, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
     } else if (dashBtn && barDashboard) {
       event.preventDefault();
-      toggleBar(barDashboard, [barPaint, barWheels, barRoofs, barSeat, colorContainer && colorContainer.parentElement]);
+      toggleBar(barDashboard, [barPaint, barWheels, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
     } else if (wheelBtn && barWheels) {
       event.preventDefault();
-      toggleBar(barWheels, [barPaint, barDashboard, barRoofs, barSeat, colorContainer && colorContainer.parentElement]);
+      toggleBar(barWheels, [barPaint, barDashboard, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
     } else if (roofBtn && barRoofs) {
       event.preventDefault();
-      toggleBar(barRoofs, [barPaint, barDashboard, barWheels, barSeat, colorContainer && colorContainer.parentElement]);
+      toggleBar(barRoofs, [barPaint, barDashboard, barWheels, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
     } else if (seatBtn && barSeat) {
       event.preventDefault();
-      toggleBar(barSeat, [barPaint, barDashboard, barWheels, barRoofs, colorContainer && colorContainer.parentElement]);
+      toggleBar(barSeat, [barPaint, barDashboard, barWheels, barRoofs, barPinca, colorContainer && colorContainer.parentElement]);
+    } else if (pincaBtn && barPinca) {
+      event.preventDefault();
+      toggleBar(barPinca, [barPaint, barDashboard, barWheels, barRoofs, barSeat, colorContainer && colorContainer.parentElement]);
     } else if (colorBtn && colorContainer) {
       event.preventDefault();
       const barColor = colorContainer.parentElement;
-      toggleBar(barColor, [barPaint, barDashboard, barWheels, barRoofs, barSeat]);
+      toggleBar(barColor, [barPaint, barDashboard, barWheels, barRoofs, barSeat, barPinca]);
     }
   });
 
@@ -96,6 +101,8 @@
   const colorSwatches = colorContainer ? Array.from(colorContainer.querySelectorAll(".custom-color__swatch")) : [];
   const seatContainer = document.querySelector(".custom-seat__swatches");
   const seatSwatches = seatContainer ? Array.from(seatContainer.querySelectorAll(".custom-seat__swatch")) : [];
+  const pincaContainer = document.querySelector(".custom-pinca__swatches");
+  const pincaSwatches = pincaContainer ? Array.from(pincaContainer.querySelectorAll(".custom-pinca__swatch")) : [];
   const bgLayer = document.querySelector(".personalizacao-bg");
   const DEFAULT_BG = 'url("img/revueltoinicial.jfif")';
   const RED_BG = 'url("img/revueltovermelho.jfif")';
@@ -103,16 +110,22 @@
   const TETO_BG_2 = 'url("img/teto2_bg.jfif")';
   const RODA_BG_1 = 'url("img/roda1_bg.jfif")';
   const RODA_BG_2 = 'url("img/roda2_bg.jfif")';
+  const RODA_BG_3 = 'url("img/roda3_bg.jfif")';
   const DASH_BG_1 = 'url("img/painel1.jfif")';
   const DASH_BG_2 = 'url("img/painel2.jfif")';
   const DASH_BG_3 = 'url("img/painel3.jfif")';
   const SEAT_BG_1 = 'url("img/banco1.jfif")';
   const SEAT_BG_2 = 'url("img/banco2.jfif")';
   const SEAT_BG_3 = 'url("img/banco3.jfif")';
+  const COR_BG_EXTERIOR_CINZA1 = 'url("img/revueltobranco.jpeg")';
+  const COR_BG_EXTERIOR_AZUL = 'url("img/revueltoazul.jpeg")';
   const COR_BG_1 = 'url("img/cor1.jfif")';
   const COR_BG_2 = 'url("img/cor2.jfif")';
   const COR_BG_3 = 'url("img/cor3.jfif")';
   const COR_BG_4 = 'url("img/cor4.jfif")';
+  const PINCA_BG_1 = 'url("img/pincadourado_bg.jfif")';
+  const PINCA_BG_2 = 'url("img/pincapreto_bg.jfif")';
+  const PINCA_BG_3 = 'url("img/pincavermelho_bg.jfif")';
   const BG_MAP = {
     default: DEFAULT_BG,
     vermelho: RED_BG,
@@ -120,16 +133,22 @@
     teto2: TETO_BG_2,
     roda1: RODA_BG_1,
     roda2: RODA_BG_2,
+    roda3: RODA_BG_3,
     painel1: DASH_BG_1,
     painel2: DASH_BG_2,
     painel3: DASH_BG_3,
     banco1: SEAT_BG_1,
     banco2: SEAT_BG_2,
     banco3: SEAT_BG_3,
+    pinturaCinza1: COR_BG_EXTERIOR_CINZA1,
+    pinturaAzulEscuro: COR_BG_EXTERIOR_AZUL,
     cor1: COR_BG_1,
     cor2: COR_BG_2,
     cor3: COR_BG_3,
     cor4: COR_BG_4,
+    pincadourado: PINCA_BG_1,
+    pincapreto: PINCA_BG_2,
+    pincavermelho: PINCA_BG_3,
   };
   let queuedBg = null;
 
@@ -183,7 +202,10 @@
     swatches.forEach((s) => s.classList.remove("custom-swatch--active"));
     target.classList.add("custom-swatch--active");
     if (shouldApplyBg) {
-      const bgKey = target.dataset.color === "vermelho" ? "vermelho" : "default";
+      let bgKey = "default";
+      if (target.dataset.color === "vermelho") bgKey = "vermelho";
+      if (target.dataset.color === "cinza-1") bgKey = "pinturaCinza1";
+      if (target.dataset.color === "azul-escuro") bgKey = "pinturaAzulEscuro";
       applyBackground(bgKey);
     }
   }
@@ -205,6 +227,7 @@
       let bgKey = "default";
       if (target.dataset.wheel === "roda1") bgKey = "roda1";
       if (target.dataset.wheel === "roda2") bgKey = "roda2";
+      if (target.dataset.wheel === "roda3") bgKey = "roda3";
       applyBackground(bgKey);
     }
   }
@@ -282,6 +305,27 @@
     centerSeat(initialActiveSeat, false);
   }
 
+  function centerPinca(target, shouldApplyBg = true) {
+    if (!pincaContainer || !target) return;
+    moveToMiddle(pincaContainer, target);
+    pincaSwatches.forEach((p) => p.classList.remove("custom-pinca__swatch--active"));
+    target.classList.add("custom-pinca__swatch--active");
+    if (shouldApplyBg) {
+      let bgKey = "default";
+      if (target.dataset.pinca === "pincadourado") bgKey = "pincadourado";
+      if (target.dataset.pinca === "pincapreto") bgKey = "pincapreto";
+      if (target.dataset.pinca === "pincavermelho") bgKey = "pincavermelho";
+      applyBackground(bgKey);
+    }
+  }
+
+  pincaSwatches.forEach((pinca) => {
+    pinca.addEventListener("click", () => centerPinca(pinca));
+  });
+  const initialActivePinca = pincaSwatches.find((p) => p.classList.contains("custom-pinca__swatch--active"));
+  if (initialActivePinca) {
+    centerPinca(initialActivePinca, false);
+  }
   function centerColor(target, shouldApplyBg = true) {
     if (!colorContainer || !target) return;
     moveToMiddle(colorContainer, target);

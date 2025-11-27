@@ -32,9 +32,9 @@
             <img src="img/pneusicon.png" alt="Pneus" />
             <span>PNEUS</span>
           </div>
-          <div class="custom-menu__item" data-item="bodykits">
-            <img src="img/bodykitsicon.png" alt="Bodykits" />
-            <span>BODYKITS</span>
+          <div class="custom-menu__item" data-trigger-pinca data-item="pinca">
+            <img src="img/pincasicon.png" alt="Pinças" />
+            <span>PINÇAS</span>
           </div>
         </div>
         <div class="custom-menu__items custom-menu__items--interior">
@@ -62,13 +62,13 @@
     <div class="custom-paint">
       <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
       <div class="custom-paint__swatches">
-        <span class="custom-swatch" data-color="cinza-1" style="background: #A0A0A3;"></span>
         <span class="custom-swatch" data-color="preto" style="background: #0C0C0B;"></span>
         <span class="custom-swatch" data-color="verde" style="background: #578A20;"></span>
         <span class="custom-swatch" data-color="dourado" style="background: #EBBD39;"></span>
         <span class="custom-swatch custom-swatch--active" data-color="laranja" style="background: #c94b24;"></span>
         <span class="custom-swatch" data-color="vermelho" style="background: #AF2025;"></span>
         <span class="custom-swatch" data-color="azul-escuro" style="background: #00174C;"></span>
+        <span class="custom-swatch" data-color="cinza-1" style="background: #A0A0A3;"></span>
         <span class="custom-swatch" data-color="azul" style="background: #3460B2;"></span>
         <span class="custom-swatch" data-color="azul-acinzentado" style="background: #2f5167;"></span>
       </div>
@@ -121,7 +121,16 @@
       <div class="custom-seat__swatches">
         <span class="custom-seat__swatch custom-seat__swatch--active" data-seat="banco1" style="background-image: url('img/banco1.jfif');"></span>
         <span class="custom-seat__swatch" data-seat="banco2" style="background-image: url('img/banco2.jfif');"></span>
-        <span class="custom-seat__swatch" data-seat="banco3" style="background-image: url('img/banco3.jfif');"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
+    <div class="custom-pinca">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-pinca__swatches">
+        <span class="custom-pinca__swatch custom-pinca__swatch--active" data-pinca="pincadourado" style="background-image: url('img/pincadourado.png');"></span>
+        <span class="custom-pinca__swatch" data-pinca="pincapreto" style="background-image: url('img/pincapreto.png');"></span>
+        <span class="custom-pinca__swatch" data-pinca="pincavermelho" style="background-image: url('img/pincavermelho.png');"></span>
       </div>
       <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
     </div>
