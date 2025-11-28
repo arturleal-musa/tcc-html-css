@@ -247,3 +247,7 @@ body::after {
 }
 
 /* --- Terceira tela --- */
+video::-webkit-media-controls-picture-in-picture-button,
+video::-moz-picture-in-picture-button {
+  display: none !important;
+}

@@ -50,7 +50,7 @@
             <img src="img/bancoicon.png" alt="Banco" />
             <span>BANCO</span>
           </div>
-          <div class="custom-menu__item" data-item="costura">
+          <div class="custom-menu__item" data-trigger-costura data-item="costura">
             <img src="img/costuraicon.png" alt="Costura" />
             <span>COSTURA</span>
           </div>
@@ -135,6 +135,18 @@
       <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
     </div>
 
+    <div class="custom-costura">
+      <button class="custom-paint__arrow" type="button" aria-label="Anterior">‹</button>
+      <div class="custom-costura__swatches">
+        <span class="custom-costura__swatch custom-costura__swatch--active" data-costura="costuraamarelo" style="background: #fff;"></span>
+        <span class="custom-costura__swatch" data-costura="costuradourado" style="background: #efff08;"></span>
+        <span class="custom-costura__swatch" data-costura="costurabranco" style="background: #dfbf0a;"></span>
+        <span class="custom-costura__swatch" data-costura="costuraazul" style="background: #00c3ff;"></span>
+      </div>
+      <button class="custom-paint__arrow" type="button" aria-label="Próximo">›</button>
+    </div>
+
     <script src="js/personalizacao.js"></script>
+    <script src="js/no-status.js"></script>
   </body>
 </html>

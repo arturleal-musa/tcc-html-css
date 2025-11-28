@@ -129,15 +129,30 @@ body {
 }
 
 .resumo-swatch--cor-interior {
-  background: url("../img/cor1.jfif") center/cover no-repeat;
+  background: #AF2025;
 }
 
 .resumo-swatch--banco {
   background: url("../img/banco2.jfif") center/cover no-repeat;
 }
 
+.resumo-swatch--pinca {
+  background: #FFD700;
+}
+
 .resumo-swatch--costura {
-  /* background: url("../img/costuraicon.png") center/50% no-repeat, #111; */
+  background: #FFD700;
+}
+
+.resumo-swatch--cor-interior::after,
+.resumo-swatch--costura::after,
+.resumo-swatch--pinca::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 60%);
+  mix-blend-mode: screen;
+  pointer-events: none;
 }
 
 .resumo-swatch--vermelho::after {

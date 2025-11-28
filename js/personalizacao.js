@@ -3,6 +3,7 @@
   const barDashboard = document.querySelector(".custom-dashboard");
   const barSeat = document.querySelector(".custom-seat");
   const barPinca = document.querySelector(".custom-pinca");
+  const barCostura = document.querySelector(".custom-costura");
   const barWheels = document.querySelector(".custom-wheels");
   const barRoofs = document.querySelector(".custom-roofs");
   const tabExterior = document.querySelector('[data-mode="exterior"]');
@@ -29,28 +30,32 @@
     const seatBtn = event.target.closest("[data-trigger-seat]");
     const colorBtn = event.target.closest("[data-trigger-color]");
     const pincaBtn = event.target.closest("[data-trigger-pinca]");
+    const costuraBtn = event.target.closest("[data-trigger-costura]");
     if (paintBtn && barPaint) {
       event.preventDefault();
-      toggleBar(barPaint, [barDashboard, barWheels, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
+      toggleBar(barPaint, [barDashboard, barWheels, barRoofs, barSeat, barPinca, barCostura, colorContainer && colorContainer.parentElement]);
     } else if (dashBtn && barDashboard) {
       event.preventDefault();
-      toggleBar(barDashboard, [barPaint, barWheels, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
+      toggleBar(barDashboard, [barPaint, barWheels, barRoofs, barSeat, barPinca, barCostura, colorContainer && colorContainer.parentElement]);
     } else if (wheelBtn && barWheels) {
       event.preventDefault();
-      toggleBar(barWheels, [barPaint, barDashboard, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
+      toggleBar(barWheels, [barPaint, barDashboard, barRoofs, barSeat, barPinca, barCostura, colorContainer && colorContainer.parentElement]);
     } else if (roofBtn && barRoofs) {
       event.preventDefault();
-      toggleBar(barRoofs, [barPaint, barDashboard, barWheels, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
+      toggleBar(barRoofs, [barPaint, barDashboard, barWheels, barSeat, barPinca, barCostura, colorContainer && colorContainer.parentElement]);
     } else if (seatBtn && barSeat) {
       event.preventDefault();
-      toggleBar(barSeat, [barPaint, barDashboard, barWheels, barRoofs, barPinca, colorContainer && colorContainer.parentElement]);
+      toggleBar(barSeat, [barPaint, barDashboard, barWheels, barRoofs, barPinca, barCostura, colorContainer && colorContainer.parentElement]);
     } else if (pincaBtn && barPinca) {
       event.preventDefault();
-      toggleBar(barPinca, [barPaint, barDashboard, barWheels, barRoofs, barSeat, colorContainer && colorContainer.parentElement]);
+      toggleBar(barPinca, [barPaint, barDashboard, barWheels, barRoofs, barSeat, barCostura, colorContainer && colorContainer.parentElement]);
+    } else if (costuraBtn && barCostura) {
+      event.preventDefault();
+      toggleBar(barCostura, [barPaint, barDashboard, barWheels, barRoofs, barSeat, barPinca, colorContainer && colorContainer.parentElement]);
     } else if (colorBtn && colorContainer) {
       event.preventDefault();
       const barColor = colorContainer.parentElement;
-      toggleBar(barColor, [barPaint, barDashboard, barWheels, barRoofs, barSeat, barPinca]);
+      toggleBar(barColor, [barPaint, barDashboard, barWheels, barRoofs, barSeat, barPinca, barCostura]);
     }
   });
 
@@ -103,6 +108,8 @@
   const seatSwatches = seatContainer ? Array.from(seatContainer.querySelectorAll(".custom-seat__swatch")) : [];
   const pincaContainer = document.querySelector(".custom-pinca__swatches");
   const pincaSwatches = pincaContainer ? Array.from(pincaContainer.querySelectorAll(".custom-pinca__swatch")) : [];
+  const costuraContainer = document.querySelector(".custom-costura__swatches");
+  const costuraSwatches = costuraContainer ? Array.from(costuraContainer.querySelectorAll(".custom-costura__swatch")) : [];
   const bgLayer = document.querySelector(".personalizacao-bg");
   const DEFAULT_BG = 'url("img/revueltoinicial.jfif")';
   const RED_BG = 'url("img/revueltovermelho.jfif")';
@@ -126,6 +133,10 @@
   const PINCA_BG_1 = 'url("img/pincadourado_bg.jfif")';
   const PINCA_BG_2 = 'url("img/pincapreto_bg.jfif")';
   const PINCA_BG_3 = 'url("img/pincavermelho_bg.jfif")';
+  const COSTURA_BG_1 = 'url("img/costuraamarelo_bg.jfif")';
+  const COSTURA_BG_2 = 'url("img/costuradourado_bg.jfif")';
+  const COSTURA_BG_3 = 'url("img/costurabranco_bg.jfif")';
+  const COSTURA_BG_4 = 'url("img/costuraazul_bg.jfif")';
   const BG_MAP = {
     default: DEFAULT_BG,
     vermelho: RED_BG,
@@ -149,6 +160,10 @@
     pincadourado: PINCA_BG_1,
     pincapreto: PINCA_BG_2,
     pincavermelho: PINCA_BG_3,
+    costuraamarelo: COSTURA_BG_1,
+    costuradourado: COSTURA_BG_2,
+    costurabranco: COSTURA_BG_3,
+    costuraazul: COSTURA_BG_4,
   };
   let queuedBg = null;
 
@@ -325,6 +340,29 @@
   const initialActivePinca = pincaSwatches.find((p) => p.classList.contains("custom-pinca__swatch--active"));
   if (initialActivePinca) {
     centerPinca(initialActivePinca, false);
+  }
+
+  function centerCostura(target, shouldApplyBg = true) {
+    if (!costuraContainer || !target) return;
+    moveToMiddle(costuraContainer, target);
+    costuraSwatches.forEach((c) => c.classList.remove("custom-costura__swatch--active"));
+    target.classList.add("custom-costura__swatch--active");
+    if (shouldApplyBg) {
+      let bgKey = "default";
+      if (target.dataset.costura === "costuraamarelo") bgKey = "costuraamarelo";
+      if (target.dataset.costura === "costuradourado") bgKey = "costuradourado";
+      if (target.dataset.costura === "costurabranco") bgKey = "costurabranco";
+      if (target.dataset.costura === "costuraazul") bgKey = "costuraazul";
+      applyBackground(bgKey);
+    }
+  }
+
+  costuraSwatches.forEach((c) => {
+    c.addEventListener("click", () => centerCostura(c));
+  });
+  const initialActiveCostura = costuraSwatches.find((c) => c.classList.contains("custom-costura__swatch--active"));
+  if (initialActiveCostura) {
+    centerCostura(initialActiveCostura, false);
   }
   function centerColor(target, shouldApplyBg = true) {
     if (!colorContainer || !target) return;
